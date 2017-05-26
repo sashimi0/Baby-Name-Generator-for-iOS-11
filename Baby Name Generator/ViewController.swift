@@ -14,6 +14,8 @@ class ViewController: UIViewController {
 	@IBOutlet weak var NameLabel: UILabel!
 	@IBOutlet weak var AnotherNameButton: UIButton!
 	@IBOutlet weak var GirlorBoyButton: UIButton!
+    @IBOutlet weak var SymbolsLabel: UILabel!
+    
 
 	var copyGirlNames : NSArray = NSArray()
 	var copyBoyNames : NSArray = NSArray()
@@ -26,8 +28,8 @@ class ViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
-		var copiedGirlNames: GirlNames = GirlNames()
-		var copiedBoyNames: BoyNames = BoyNames()
+		let copiedGirlNames: GirlNames = GirlNames()
+		let copiedBoyNames: BoyNames = BoyNames()
 		copyGirlNames = copiedGirlNames.girlnames
 		copyBoyNames = copiedBoyNames.boynames
 		
@@ -53,10 +55,12 @@ class ViewController: UIViewController {
 		
 		if isGirl == 0 {
 			GirlorBoyButton.setTitle("Girl", for: .normal)
+            GirlorBoyButton.setTitleColor(UIColor.magenta, for: .normal)
 		}
 		
 		if isGirl == 1{
 			GirlorBoyButton.setTitle("Boy", for: .normal)
+            GirlorBoyButton.setTitleColor(UIColor.blue, for: .normal)
 			
 		}
 		
@@ -68,6 +72,7 @@ class ViewController: UIViewController {
 		}
 		
 		chooseName()
+        symbols()
 	}
 	func chooseName(){
 		
@@ -83,5 +88,15 @@ class ViewController: UIViewController {
 		}
 		
 	}
+    func symbols(){
+        if isGirl == 0 {
+            SymbolsLabel.text = "♀"
+            SymbolsLabel.textColor = UIColor.magenta
+        }
+        else {
+            SymbolsLabel.text = "♂"
+            SymbolsLabel.textColor = UIColor.blue
+        }
+    }
 }
 
