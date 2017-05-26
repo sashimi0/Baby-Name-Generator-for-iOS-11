@@ -14,6 +14,8 @@
 		B0ED2C3A1EBC0FF800611BD2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0ED2C381EBC0FF800611BD2 /* LaunchScreen.storyboard */; };
 		B0ED2C451EBC0FF800611BD2 /* Baby_Name_GeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0ED2C441EBC0FF800611BD2 /* Baby_Name_GeneratorTests.swift */; };
 		B0ED2C501EBC0FF800611BD2 /* Baby_Name_GeneratorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0ED2C4F1EBC0FF800611BD2 /* Baby_Name_GeneratorUITests.swift */; };
+		B0ED2C5E1EBC133300611BD2 /* GirlNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0ED2C5D1EBC133300611BD2 /* GirlNames.swift */; };
+		B0ED2C601EBC135300611BD2 /* BoyNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0ED2C5F1EBC135300611BD2 /* BoyNames.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		B0ED2C4B1EBC0FF800611BD2 /* Baby Name GeneratorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Baby Name GeneratorUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0ED2C4F1EBC0FF800611BD2 /* Baby_Name_GeneratorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Baby_Name_GeneratorUITests.swift; sourceTree = "<group>"; };
 		B0ED2C511EBC0FF800611BD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0ED2C5D1EBC133300611BD2 /* GirlNames.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GirlNames.swift; path = ../GirlNames.swift; sourceTree = "<group>"; };
+		B0ED2C5F1EBC135300611BD2 /* BoyNames.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BoyNames.swift; path = ../BoyNames.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,8 @@
 			children = (
 				B0ED2C2F1EBC0FF800611BD2 /* AppDelegate.swift */,
 				B0ED2C311EBC0FF800611BD2 /* ViewController.swift */,
+				B0ED2C5D1EBC133300611BD2 /* GirlNames.swift */,
+				B0ED2C5F1EBC135300611BD2 /* BoyNames.swift */,
 				B0ED2C331EBC0FF800611BD2 /* Main.storyboard */,
 				B0ED2C361EBC0FF800611BD2 /* Assets.xcassets */,
 				B0ED2C381EBC0FF800611BD2 /* LaunchScreen.storyboard */,
@@ -259,8 +265,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0ED2C5E1EBC133300611BD2 /* GirlNames.swift in Sources */,
 				B0ED2C321EBC0FF800611BD2 /* ViewController.swift in Sources */,
 				B0ED2C301EBC0FF800611BD2 /* AppDelegate.swift in Sources */,
+				B0ED2C601EBC135300611BD2 /* BoyNames.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
