@@ -15,8 +15,9 @@ class ViewController: UIViewController {
 	@IBOutlet weak var AnotherNameButton: UIButton!
 	@IBOutlet weak var GirlorBoyButton: UIButton!
     @IBOutlet weak var SymbolsLabel: UILabel!
+    @IBOutlet weak var secondnamelabel: UILabel!
+    @IBOutlet weak var secondnameswitch: UISwitch!
     
-
 	var copyGirlNames : NSArray = NSArray()
 	var copyBoyNames : NSArray = NSArray()
 	
@@ -32,6 +33,8 @@ class ViewController: UIViewController {
 		let copiedBoyNames: BoyNames = BoyNames()
 		copyGirlNames = copiedGirlNames.girlnames
 		copyBoyNames = copiedBoyNames.boynames
+        secondnamelabel.isHidden = true
+        secondnameswitch.isOn = false
 		
 		
 	}
@@ -98,5 +101,25 @@ class ViewController: UIViewController {
             SymbolsLabel.textColor = UIColor.blue
         }
     }
+    
+    @IBAction func switchuse(_ sender: UISwitch) {
+        if (sender.isOn == true){
+            secondnamelabel.isHidden = false
+            secondName()
+        }
+        else {
+            secondnamelabel.isHidden = true
+        }
+    }
+        func secondName(){
+            if isGirl == 0{
+                randomGirl = Int(arc4random_uniform(UInt32(copyGirlNames.count)))
+                secondnamelabel.text = "\(copyGirlNames[randomGirl])"
+            }
+            
+            if isGirl == 1{
+                randomBoy = Int(arc4random_uniform(UInt32(copyBoyNames.count)))
+                secondnamelabel.text = "\(copyBoyNames[randomBoy])"
+            }
+        }
 }
-
