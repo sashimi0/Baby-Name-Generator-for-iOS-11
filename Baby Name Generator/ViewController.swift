@@ -17,8 +17,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var SymbolsLabel: UILabel!
     @IBOutlet weak var secondnamelabel: UILabel!
     @IBOutlet weak var secondnameswitch: UISwitch!
-    @IBOutlet weak var ShareButtonBar: UIToolbar!
     
+    @IBOutlet weak var toolbar: UIToolbar!
+    @IBOutlet weak var shareSheet: UIBarButtonItem!
     
 	var copyGirlNames : NSArray = NSArray()
 	var copyBoyNames : NSArray = NSArray()
@@ -37,7 +38,7 @@ class ViewController: UIViewController {
 		copyBoyNames = copiedBoyNames.boynames
         secondnamelabel.isHidden = true
         secondnameswitch.isOn = false
-        self.view.addSubview(ShareButtonBar)
+        self.view.addSubview(toolbar)
  
 	}
 	
@@ -124,19 +125,27 @@ class ViewController: UIViewController {
                 secondnamelabel.text = "\(copyBoyNames[randomBoy])"
             }
         }
-    func captureScreen() -> UIImage {
-        var window: UIWindow? = UIApplication.shared.keyWindow
-        window = UIApplication.shared.windows[0] as? UIWindow
-        UIGraphicsBeginImageContextWithOptions(window!.frame.size, window!.isOpaque, 0.0)
-        window!.layer.render(in: UIGraphicsGetCurrentContext()!)
-        let image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        return image!;
-    }
-  
     
-    @IBAction func ShareButton(_ sender: AnyObject) {
-        captureScreen()
+    @IBAction func shareSheet(_ sender: AnyObject) {
+        
+        
+        let firstActivityItem = "Text you want"
+        let secondActivityItem : NSURL = NSURL(string: "http//:urlyouwant")!
+        let activityViewController : UIActivityViewController = UIActivityViewController(
+            activityItems: [firstActivityItem, secondActivityItem], applicationActivities: nil)
+        
+        
+        // Anything you want to exclude
+        activityViewController.excludedActivityTypes = [
+            UIActivityType.postToWeibo,
+            UIActivityType.print,
+            UIActivityType.saveToCameraRoll,
+            UIActivityType.addToReadingList,
+            UIActivityType.postToFlickr,
+            UIActivityType.postToVimeo,
+
+        ]
+        
+        self.present(activityViewController, animated: true, completion: nil)
     }
-    
 }

@@ -23,7 +23,7 @@
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="bottom" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleAspectFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         <subviews>
@@ -80,13 +80,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fJG-e2-Nuc">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ODu-V4-JZf">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem systemItem="action" id="8Mh-Ab-rcO">
+                                    <barButtonItem systemItem="action" id="Sv8-te-rOg">
                                         <connections>
-                                            <action selector="ShareButton:" destination="BYZ-38-t0r" id="Y6p-5P-Crc"/>
+                                            <action selector="shareSheet:" destination="BYZ-38-t0r" id="Y7e-0f-O7E"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -101,10 +101,11 @@
                         <outlet property="BabyNameGenerator" destination="SKY-Gl-FeY" id="eT1-Cs-9sU"/>
                         <outlet property="GirlorBoyButton" destination="Ssy-FN-HH3" id="ytn-wp-543"/>
                         <outlet property="NameLabel" destination="HH4-2L-YUb" id="4b4-ff-Pwr"/>
-                        <outlet property="ShareButtonBar" destination="fJG-e2-Nuc" id="3oJ-Oj-Fj3"/>
                         <outlet property="SymbolsLabel" destination="pWz-tD-XdY" id="6FN-IQ-cmq"/>
                         <outlet property="secondnamelabel" destination="iNW-Cx-hEz" id="lIw-60-621"/>
                         <outlet property="secondnameswitch" destination="b9R-G1-gOG" id="HBg-Oo-hXj"/>
+                        <outlet property="shareSheet" destination="Sv8-te-rOg" id="9gG-C6-JkI"/>
+                        <outlet property="toolbar" destination="ODu-V4-JZf" id="4Ez-GP-WR2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
