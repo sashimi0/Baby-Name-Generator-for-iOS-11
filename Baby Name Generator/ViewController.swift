@@ -17,6 +17,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var SymbolsLabel: UILabel!
     @IBOutlet weak var secondnamelabel: UILabel!
     @IBOutlet weak var secondnameswitch: UISwitch!
+    @IBOutlet weak var ShareButtonBar: UIToolbar!
+    
     
 	var copyGirlNames : NSArray = NSArray()
 	var copyBoyNames : NSArray = NSArray()
@@ -35,8 +37,8 @@ class ViewController: UIViewController {
 		copyBoyNames = copiedBoyNames.boynames
         secondnamelabel.isHidden = true
         secondnameswitch.isOn = false
-		
-		
+        self.view.addSubview(ShareButtonBar)
+ 
 	}
 	
 
@@ -122,4 +124,19 @@ class ViewController: UIViewController {
                 secondnamelabel.text = "\(copyBoyNames[randomBoy])"
             }
         }
+    func captureScreen() -> UIImage {
+        var window: UIWindow? = UIApplication.shared.keyWindow
+        window = UIApplication.shared.windows[0] as? UIWindow
+        UIGraphicsBeginImageContextWithOptions(window!.frame.size, window!.isOpaque, 0.0)
+        window!.layer.render(in: UIGraphicsGetCurrentContext()!)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image!;
+    }
+  
+    
+    @IBAction func ShareButton(_ sender: AnyObject) {
+        captureScreen()
+    }
+    
 }
