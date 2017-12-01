@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var SymbolsLabel: UILabel!
     @IBOutlet weak var secondnamelabel: UILabel!
     @IBOutlet weak var secondnameswitch: UISwitch!
+    @IBOutlet weak var addsecondnamequestion: UILabel!
     
     @IBOutlet weak var toolbar: UIToolbar!
     @IBOutlet weak var shareSheet: UIBarButtonItem!
@@ -55,7 +56,8 @@ class ViewController: UIViewController {
 	
 	@IBAction func GirlBoyButtonAction() {
 		chooseGirlOrBoy()
-	}
+        
+    }
 
 	func chooseGirlOrBoy(){
 		
@@ -104,16 +106,24 @@ class ViewController: UIViewController {
             SymbolsLabel.textColor = UIColor.blue
         }
     }
+//    Adding switch to enable a second name.
     
     @IBAction func switchuse(_ sender: UISwitch) {
-        if (sender.isOn == true){
+        if (sender.isOn == true) {
             secondnamelabel.isHidden = false
+            addsecondnamequestion.isHidden = true
             secondName()
+            
         }
-        else {
+        else  {
             secondnamelabel.isHidden = true
+            addsecondnamequestion.isHidden = false
         }
+        
+        
     }
+    
+    
         func secondName(){
             if isGirl == 0{
                 randomGirl = Int(arc4random_uniform(UInt32(copyGirlNames.count)))
@@ -126,23 +136,20 @@ class ViewController: UIViewController {
             }
         }
     
+//    Share button options
     @IBAction func shareSheet(_ sender: AnyObject) {
         
-        
-        let firstActivityItem = "Text you want"
-        let secondActivityItem : NSURL = NSURL(string: "http//:urlyouwant")!
+        let firstActivityItem = "still need to add to print the label"
+//        let secondActivityItem : NSURL = NSURL(string: "http//:urlyouwant")!
         let activityViewController : UIActivityViewController = UIActivityViewController(
-            activityItems: [firstActivityItem, secondActivityItem], applicationActivities: nil)
-        
+            activityItems: [firstActivityItem], applicationActivities: nil)
         
         // Anything you want to exclude
         activityViewController.excludedActivityTypes = [
             UIActivityType.postToWeibo,
-            UIActivityType.print,
-            UIActivityType.saveToCameraRoll,
-            UIActivityType.addToReadingList,
-            UIActivityType.postToFlickr,
+            UIActivityType.postToTencentWeibo,
             UIActivityType.postToVimeo,
+            UIActivityType.postToFlickr
 
         ]
         
